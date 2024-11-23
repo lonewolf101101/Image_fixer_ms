@@ -1,1 +1,1 @@
-web: python main.py --model lama
+web: python main.py start --model lama --port $PORT
