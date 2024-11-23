@@ -1,1 +1,1 @@
-web: python main.py --model lama --port 8080
+web: python main.py --model lama
