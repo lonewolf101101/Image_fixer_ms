@@ -1,0 +1,4 @@
+include iopaint/web_app/*
+include model/anytext/ocr_recog/ppocr_keys_v1.txt
+include model/anytext/anytext_sd15.yaml
+include model/original_sd_configs/*
