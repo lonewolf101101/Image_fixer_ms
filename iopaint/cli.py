@@ -98,7 +98,7 @@ def run(
 @use_json_config()
 def start(
     host: str = Option("0.0.0.0"),
-    port: int = Option(8080),
+    port = int(os.getenv('PORT', 8080)),
     inbrowser: bool = Option(False, help=INBROWSER_HELP),
     model: str = Option(
         DEFAULT_MODEL,

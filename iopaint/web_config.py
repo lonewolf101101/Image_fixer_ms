@@ -158,7 +158,7 @@ def main(config_file: Path):
             with gr.Tab("Common"):
                 with gr.Row():
                     host = gr.Textbox(init_config.host, label="Host")
-                    port = gr.Number(init_config.port, label="Port", precision=0)
+                    port = gr.Number(int(os.getenv("PORT", init_config.port)), label="Port", precision=0)
                     inbrowser = gr.Checkbox(init_config.inbrowser, label=INBROWSER_HELP)
 
                 with gr.Row():
