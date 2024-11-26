@@ -145,6 +145,7 @@ class RealESRGANModel(Choices):
 
 class RemoveBGModel(Choices):
     briaai_rmbg_1_4 = "briaai/RMBG-1.4"
+    briaai_rmbg_2_0 = "briaai/RMBG-2.0"
     # models from https://github.com/danielgatis/rembg
     u2net = "u2net"
     u2netp = "u2netp"
@@ -265,6 +266,7 @@ class ApiConfig(BaseModel):
     interactive_seg_model: InteractiveSegModel
     interactive_seg_device: Device
     enable_remove_bg: bool
+    remove_bg_device: Device
     remove_bg_model: str
     enable_anime_seg: bool
     enable_realesrgan: bool
@@ -281,7 +283,7 @@ class InpaintRequest(BaseModel):
     mask: Optional[str] = Field(None, description="base64 encoded mask")
 
     ldm_steps: int = Field(20, description="Steps for ldm model.")
-    ldm_sampler: str = Field(LDMSampler.plms, discription="Sampler for ldm model.")
+    ldm_sampler: str = Field(LDMSampler.plms, description="Sampler for ldm model.")
     zits_wireframe: bool = Field(True, description="Enable wireframe for zits model.")
 
     hd_strategy: str = Field(
@@ -340,7 +342,7 @@ class InpaintRequest(BaseModel):
     )
     sd_guidance_scale: float = Field(
         7.5,
-        help="Higher guidance scale encourages to generate images that are closely linked to the text prompt, usually at the expense of lower image quality.",
+        description="Higher guidance scale encourages to generate images that are closely linked to the text prompt, usually at the expense of lower image quality.",
     )
     sd_sampler: str = Field(
         SDSampler.uni_pc, description="Sampler for diffusion model."

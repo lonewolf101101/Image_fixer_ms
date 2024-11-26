@@ -19,13 +19,14 @@
   </a>
 </p>
 
-| Erase([LaMa](https://www.iopaint.com/models/erase/lama))                                             | Replace Object([PowerPaint](https://www.iopaint.com/models/diffusion/powerpaint))                    |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| <video src="https://github.com/Sanster/IOPaint/assets/3998421/264bc27c-0abd-4d8b-bb1e-0078ab264c4a"> | <video src="https://github.com/Sanster/IOPaint/assets/3998421/1de5c288-e0e1-4f32-926d-796df0655846"> |
+|Erase([LaMa](https://www.iopaint.com/models/erase/lama))|Replace Object([PowerPaint](https://www.iopaint.com/models/diffusion/powerpaint))|
+|-----|----|
+|<video src="https://github.com/Sanster/IOPaint/assets/3998421/264bc27c-0abd-4d8b-bb1e-0078ab264c4a">  | <video src="https://github.com/Sanster/IOPaint/assets/3998421/1de5c288-e0e1-4f32-926d-796df0655846">|
 
-| Draw Text([AnyText](https://www.iopaint.com/models/diffusion/anytext))                               | Out-painting([PowerPaint](https://www.iopaint.com/models/diffusion/powerpaint))                      |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| <video src="https://github.com/Sanster/IOPaint/assets/3998421/ffd4eda4-f7d4-4693-93d8-d2cd5aa7c6d6"> | <video src="https://github.com/Sanster/IOPaint/assets/3998421/c4af8aef-8c29-49e0-96eb-0aae2f768da2"> |
+|Draw Text([AnyText](https://www.iopaint.com/models/diffusion/anytext))|Out-painting([PowerPaint](https://www.iopaint.com/models/diffusion/powerpaint))|
+|---------|-----------|
+|<video src="https://github.com/Sanster/IOPaint/assets/3998421/ffd4eda4-f7d4-4693-93d8-d2cd5aa7c6d6">|<video src="https://github.com/Sanster/IOPaint/assets/3998421/c4af8aef-8c29-49e0-96eb-0aae2f768da2">|
+
 
 ## Features
 
@@ -33,7 +34,6 @@
 - [Windows 1-Click Installer](https://www.iopaint.com/install/windows_1click_installer)
 - [OptiClean](https://apps.apple.com/ca/app/opticlean/id6452387177): macOS & iOS App for object erase
 - Supports various AI [models](https://www.iopaint.com/models) to perform erase, inpainting or outpainting task.
-
   - [Erase models](https://www.iopaint.com/models#erase-models): These models can be used to remove unwanted object, defect, watermarks, people from image.
   - Diffusion models: These models can be used to replace objects or perform outpainting. Some popular used models include:
     - [runwayml/stable-diffusion-inpainting](https://huggingface.co/runwayml/stable-diffusion-inpainting)
@@ -54,6 +54,7 @@
   - [GFPGAN](https://iopaint.com/plugins/GFPGAN): Face Restoration
   - [RestoreFormer](https://iopaint.com/plugins/RestoreFormer): Face Restoration
 - [FileManager](https://iopaint.com/file_manager): Browse your pictures conveniently and save them directly to the output directory.
+
 
 ## Quick Start
 
@@ -80,7 +81,7 @@ You can see other supported models at [here](https://www.iopaint.com/models) and
 
 ### Plugins
 
-You can specify which plugins to use when starting the service, and you can view the commands to enable plugins by using `iopaint start --help`.
+You can specify which plugins to use when starting the service, and you can view the commands to enable plugins by using `iopaint start --help`. 
 
 More demonstrations of the Plugin can be seen [here](https://www.iopaint.com/plugins)
 
@@ -117,19 +118,16 @@ cp -r dist/ ../iopaint/web_app
 ```
 
 Create a `.env.local` file in `web_app` and fill in the backend IP and port.
-
 ```
 VITE_BACKEND=http://127.0.0.1:8080
 ```
 
 Start front-end development environment
-
 ```bash
 npm run dev
 ```
 
 Install back-end requirements and start backend service
-
 ```bash
 pip install -r requirements.txt
 python3 main.py start --model lama --port 8080
